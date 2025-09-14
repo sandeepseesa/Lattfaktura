@@ -1,0 +1,116 @@
+
+
+.table-container {
+    width: 100%;
+    height: 70vh; /* Adjust height as needed */
+    /* padding: 0 16px; */
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.price-table {
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+/* .price-list-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    padding: 20px 0;
+    box-sizing: border-box;
+} */
+
+.table-header{
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.table-row{
+    border:1px solid #000;
+    padding: 2px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    box-sizing: border-box;
+    border-radius: 0.75vw;
+}
+
+.table-row input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    background-color: transparent;
+    padding: 4px;
+    box-sizing: border-box;
+    border-radius: 12.5px; ;
+}
+
+.update {
+  background: none;
+    text-align: center;
+    border: none;
+    padding: 2px;
+    cursor: pointer;
+
+}
+
+.icon-img {
+   max-width: 2vw;
+   max-height: 4vh;
+}
+
+.icon-button{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .price-table th:nth-child(3),
+  .price-table td:nth-child(3),
+  .price-table th:nth-child(7),
+  .price-table td:nth-child(7) { display: none; }
+
+  .icon-button .icon-img {
+    max-width: 3vw;
+    max-height: 4vh;
+  }
+}
+@media (max-width: 480px) {
+  
+  .price-table th:nth-child(1),
+  .price-table td:nth-child(1),
+  .price-table th:nth-child(6),
+  .price-table td:nth-child(6),
+  .price-table th:nth-child(5),
+  .price-table td:nth-child(5) { display: none; }
+
+  .icon-button .icon-img {
+    max-width: 5vw;
+    max-height: 5vh;
+  }
+
+}
+
+@media (max-width: 360px) {
+  .price-table th:nth-child(6),
+  .price-table td:nth-child(6),
+  .price-table th:nth-child(7),
+  .price-table td:nth-child(7) { display: none; } 
+
+  .icon-button .icon-img {
+    max-width: 5vw;
+    max-height: 4vh;
+  }
+}
+
