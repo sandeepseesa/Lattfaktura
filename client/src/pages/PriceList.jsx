@@ -38,8 +38,11 @@ const PriceList = () => {
     try {
       const response = await axios.post(`https://lattfaktura.onrender.com/priceList/${id}`, row);
       console.log('Item updated:', response.data);
+      alert("Updated Successfully");
     } catch (error) {
       console.error('Error updating item:', error);
+      const msg = error?.resposne?.data?.message || error.message || "Update failed";
+      alert(`Update failed: ${msg}`);
     }
   }
 
@@ -47,9 +50,11 @@ const PriceList = () => {
     try {
       await axios.delete(`https://lattfaktura.onrender.com/priceList/${id}`);
       setData(data.filter((item) => item.id !== id));
-      console.log('Item deleted');
+      console.log('Product deleted');
+      alert("Deleted successfully",);
     } catch (error) {
-      console.error('Error deleting item:', error);
+      const msg = error?.response?.data?.message || error.message || "Delete failed.";
+      console.error(`Delete failed: ${msg}`);
     }
   }
 
@@ -65,8 +70,10 @@ const PriceList = () => {
               <th>In Price</th>
               <th>Price</th>
               <th>Unit</th>
-              <th>Stock</th>
+              <th>In Stock</th>
               <th>Description</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
 

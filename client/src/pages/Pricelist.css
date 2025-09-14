@@ -8,14 +8,16 @@
 .price-table {
     width: 100%;
     box-sizing: border-box; 
+    border-collapse: separate;
+    border-spacing: 4px 10px;
 }
-
 
 .table-header{
     text-align: left;
     position: sticky;
     top: 0;
     z-index: 1;
+    background-color: #fff;
 }
 .table-row{
     border:1px solid #000;
@@ -30,6 +32,7 @@
     max-width: 150px;
     box-sizing: border-box;
     border-radius: 0.75vw;
+    
 }
 
 .table-row input {
@@ -39,9 +42,9 @@
     font-size: 14px;
     color: #333;
     background-color: transparent;
-    padding: 4px;
+    padding: 6px;
     box-sizing: border-box;
-    border-radius: 12.5px; ;
+    border-radius: 10px; ;
 }
 
 .update {
@@ -88,6 +91,16 @@
   .icon-button .icon-img {
     max-width: 5vw;
     max-height: 5vh;
+  }
+
+   .price-table {
+    border-spacing: 8px 6px;
+  }
+  .table-row {
+    border-radius: 10px;
+  }
+  .table-row input {
+    border-radius: 8px;
   }
 
 }
