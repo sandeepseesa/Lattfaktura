@@ -28,7 +28,9 @@ const start = async () => {
 
     await db.sequelize.sync({ alter: true });
 
-    await app.listen({ port: 3005 });
+    
+    await app.listen({ port: 3005, host:'0.0.0.0'});
+
     app.log.info('Server is running on http://localhost:3005');
 
   } catch (err) {
