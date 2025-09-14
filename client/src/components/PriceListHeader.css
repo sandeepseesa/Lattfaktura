@@ -18,39 +18,35 @@
   display: block;
 }
 
-/* Pill input */
+
 .pill-search-input {
   width: 100%; 
   box-sizing: border-box;
-  padding: 8px 10px; /* room on the right for the icon */
+  padding: 8px 10px;
   /* font-size: 16px; */
-  border-radius: 999px;       /* full pill */
-  border: 1px solid #000;     /* black border like the mock */
+  border-radius: 999px;     
+  border: 1px solid #000; 
   background: #fff;
   outline: none;
 
-  /* remove native browser styling for consistent appearance */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 
-  -webkit-border-radius: 999px; /* older iOS/Android compatibility */
+  -webkit-border-radius: 999px; 
   transition: box-shadow 0.12s ease, border-color 0.12s ease;
 }
 
-/* Focus state */
 .pill-search-input:focus {
   border-color: #000;
   box-shadow: 0 0 0 4px rgba(0,0,0,0.03);
 }
 
-/* Optionally hide native "x" clear on webkit search inputs */
 .pill-search-input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
   display: none;
 }
 
-/* Icon button inside the pill */
 .pill-search-btn {
   position: absolute;
   right: 12px;
@@ -59,8 +55,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  /* remove native button styles */
   background: transparent;
   border: none;
   padding: 6px;
@@ -73,7 +67,6 @@
   appearance: none;
 }
 
-/* icon stroke color inherits from this */
 .pill-search-icon {
   color: #000;
   display: block;
@@ -142,29 +135,6 @@
     }
 }
 
-/* small devices */
-/* @media (max-width: 480px) {
-  .pill-search-input {
-    padding: 10px 48px 10px 14px;
-    font-size: 14px;
-  }
-  .pill-search-btn {
-    right: 10px;
-  }
-  .search-bars {
-    width: 100%;
-    margin: 10px 0;
-    min-width: unset;
-    max-width: unset;
-  }
-
-  .action-buttons {
-    width: 100%;
-    justify-content: center;
-    /* overflow-x: auto; */
-    /* gap: 5px; */
-  /* } */
-/* }  */
 
 @media (max-width: 480px) {
     .search-bars {

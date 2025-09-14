@@ -8,7 +8,7 @@ const Navbar = ({side}) => {
     return (
         <>
         <nav className="navbar">
-            <div className="hamburger" onClick={side}>
+            <div className="hamburger" onClick={side}  data-sidebar-toggle="true" >
                     {/* <img src="/hamburger-menu.svg" alt="menu" className="menu-icon" /> */}
                     <svg xmlns="/hamburger-menu.svg" width="30" height="30" viewBox="0 0 24 24" fill="white" >
                         <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />

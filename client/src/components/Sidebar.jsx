@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './Sidebar.css'
 
 const menuItems = [
@@ -17,19 +17,23 @@ const menuItems = [
 ];
 
 
-const Sidebar = ({isActive, setIsActive}) => {
+const Sidebar = ({ isActive, setIsActive }) => {
 
     const sidebarRef = useRef(null);
 
-     useEffect(() => {
-    function handleOutsideClick(e) {
-      if (isActive && sidebarRef.current && !sidebarRef.current.contains(e.target)) {
-        setIsActive(false);
+    useEffect(() => {
+        function handleOutsideClick(e) {
+
+            if (e.target.closest && e.target.closest('[data-sidebar-toggle]')) {
+        return;
       }
-    }
-    document.addEventListener('mousedown', handleOutsideClick);
-    return () => document.removeEventListener('mousedown', handleOutsideClick);
-  }, [isActive]);
+            if (window.innerWidth <= 768 && isActive && sidebarRef.current && !sidebarRef.current.contains(e.target)) {
+                setIsActive(false);
+            }
+        }
+        document.addEventListener('mousedown', handleOutsideClick);
+        return () => document.removeEventListener('mousedown', handleOutsideClick);
+    }, [isActive, setIsActive]);
 
     return (
         <aside ref={sidebarRef} className="sidebar">
