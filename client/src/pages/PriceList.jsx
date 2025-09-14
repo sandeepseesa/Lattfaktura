@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./PriceList.css";
+import "./Pricelist.css";
 import axios from "axios";
 
 import PriceListHeader from "../components/PriceListHeader";
