@@ -27,7 +27,7 @@ const PriceList = () => {
 
   const tableData = () => {
 
-    axios.get('http://localhost:3005/priceList')
+    axios.get('https://lattfaktura.onrender.com/priceList')
       .then(response => {
         setData(response.data);
       })
@@ -36,7 +36,7 @@ const PriceList = () => {
   const handleSave = async (id) => {
     const row = data.find((item) => item.id === id);
     try {
-      const response = await axios.post(`http://localhost:3005/priceList/${id}`, row);
+      const response = await axios.post(`https://lattfaktura.onrender.com/priceList/${id}`, row);
       console.log('Item updated:', response.data);
     } catch (error) {
       console.error('Error updating item:', error);
@@ -45,7 +45,7 @@ const PriceList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3005/priceList/${id}`);
+      await axios.delete(`https://lattfaktura.onrender.com/priceList/${id}`);
       setData(data.filter((item) => item.id !== id));
       console.log('Item deleted');
     } catch (error) {
