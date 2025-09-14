@@ -12,7 +12,7 @@ app.get('/', async (request, reply) => {
 });
 
 app.register(fastifyCors, {
-  origin: '*'
+  origin: 'https://lattfaktura-frontend.onrender.com'
 });
 
 app.decorate('db', db);
