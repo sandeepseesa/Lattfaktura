@@ -3,7 +3,7 @@ import sequelize from './config/dbconfig.js';
 import productListRoute from './routes/priceListRoute.js';
 import fastifyCors from "@fastify/cors";
 import db from './models/index.js';
-
+import termsRoute from './routes/termsRoute.js';
 
 const app = Fastify( {logger: true } );
 
@@ -12,7 +12,7 @@ app.get('/', async (request, reply) => {
 });
 
 app.register(fastifyCors, {
-  origin: ['https://lattfaktura-frontend.onrender.com' ],
+  origin: ['https://lattfaktura-frontend.onrender.com' , 'http://localhost:5173'],
   methods: ['GET','HEAD', 'PUT','PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   credentials:true
@@ -22,6 +22,7 @@ app.decorate('db', db);
 
 
 app.register(productListRoute, { prefix: '/' });
+app.register(termsRoute, { prefix: '/te' });
 
 const start = async () => {
 
