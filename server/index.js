@@ -12,7 +12,7 @@ app.get('/', async (request, reply) => {
 });
 
 app.register(fastifyCors, {
-  origin: ['https://lattfaktura-frontend.onrender.com' ],
+  origin: ['https://lattfaktura-frontend.onrender.com' , 'https://lattfakturaterms.onrender.com'],
   methods: ['GET','HEAD', 'PUT','PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   credentials:true
